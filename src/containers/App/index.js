@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchPalettes} from '../../thunks/fetchPalettes.js'
 import './App.scss';
 
 class App extends Component {
@@ -11,6 +13,8 @@ class App extends Component {
     }
   }
   componentDidMount() {
+    this.props.fetchProjects();
+    this.props.fetchPalettes();
   }
 
 
