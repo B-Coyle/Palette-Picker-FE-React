@@ -1,5 +1,5 @@
 import React from 'react';
-import Palette from '../Palette';
+import Palette from '../Palette/Palette';
 
 function Projects(props) {
     const palettes =  props.data.palettes.map(palette => 
