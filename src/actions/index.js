@@ -13,11 +13,6 @@ export const savePalette = palette => ({
   palette
 });
 
-export const saveColors = colors => ({
-  type: "SAVE_COLORS",
-  colors
-});
-
 export const addPalette = newPalette => ({
   type: "ADD_PALETTE",
   newPalette
