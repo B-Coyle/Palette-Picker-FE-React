@@ -2,8 +2,7 @@ import {hasError, savePalette, isLoading} from '../actions';
 
 export const fetchPalettes = () => {
     return async(dispatch) => {
-        const url = ``;
-        //need url here
+        const url = `${process.env.REACT_APP_BACKEND_URL}api/v1/palettes`;
         try {
             dispatch(isLoading(true))
             const response = await fetch(url)
