@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { fetchPalettes } from "../../thunks/fetchPalettes.js";
 import "./App.scss";
 import { fetchProjects } from "../../thunks/fetchProjects.js";
+import ProjectContainer from "../ProjectContainer/ProjectContainer.jsx";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      projects: [],
       loading: true,
       error: ""
     };
@@ -101,9 +101,7 @@ class App extends Component {
             />
           </form>
         </section>
-        <section class="saved-projects-section">
-          <div class="saved-projects-container" />
-        </section>
+        <ProjectContainer/>
       </main>
     );
   }
