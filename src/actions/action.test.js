@@ -32,7 +32,7 @@ describe("actions", () => {
     expect(result).toEqual(expected);
   });
 
-  it('should return a type of ADD_PALETTE WITH one new palette', () => {
+  it('should return a type of ADD_PALETTE with one new palette', () => {
     const newPalette = 'New Palette';
     const expected = {
       type: "ADD_PALETTE",
