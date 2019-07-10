@@ -40,7 +40,18 @@ describe("actions", () => {
     };
     const result = actions.addPalette(newPalette);
     expect(result).toEqual(expected);
-  })
+  });
+
+  it('should return a type of ADD_PROJECT with a new project', () => {
+    const newProject = 'New Project';
+    const expected = {
+      type: "ADD_PROJECT",
+      newProject
+    };
+    const result = actions.addProject(newProject);
+    expect(result).toEqual(expected);
+  });
+
 
   it("should return a type of IS_LOADING with a boolean", () => {
     const isLoading = true;
