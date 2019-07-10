@@ -1,7 +1,6 @@
 import { hasError, saveProjects, isLoading } from '../actions';
 
 export const fetchProjects = () => {
-    console.log('FETCH PROJECTS');
     console.log(process.env);
     return async(dispatch) => {
         const url = `${process.env.REACT_APP_BACKEND_URL}/api/v1/projects`;
