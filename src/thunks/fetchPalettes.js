@@ -1,4 +1,4 @@
-import {hasError, savePalettes, isLoading} from '../actions';
+import {hasError, savePalette, isLoading} from '../actions';
 
 export const fetchPalettes = () => {
     return async(dispatch) => {
@@ -11,7 +11,7 @@ export const fetchPalettes = () => {
                 throw Error (response.statusText)
             }
             const palettes = await response.json();
-            dispatch(savePalettes(palettes))
+            dispatch(savePalette(palettes))
             dispatch(isLoading(false))
         } catch (error) {
             dispatch(hasError(error.message))
