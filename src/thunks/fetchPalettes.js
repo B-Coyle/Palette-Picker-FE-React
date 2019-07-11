@@ -1,5 +1,6 @@
 import {hasError, savePalette, isLoading} from '../actions';
 
+
 export const fetchPalettes = () => {
     return async(dispatch) => {
         const url = `https://palette-picker-jbbc.herokuapp.com/api/v1/palettes`;
