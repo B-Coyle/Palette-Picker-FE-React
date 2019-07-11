@@ -3,8 +3,9 @@ import Palette from "../Palette/Palette";
 import { connect } from "react-redux";
 
 export function Project(props) {
+  
 	const projectPalettes = props.palettes.filter(
-    palette => palette.project_id === props.project.id
+    palette => +palette.project_id === +props.project.id
   );
   const palettes = projectPalettes.map(palette => (
     <Palette data={palette} key={palette.id} projectID={props.project.id} />
