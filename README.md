@@ -38,8 +38,8 @@ First in the back-end folder run `npm start` in your terminal, you should see "S
 
   - Final Project Screenshots
   
-<img width="583" alt="image" src='https://i.postimg.cc/d00V4yzP/localhost-3001-12.png'>
-<img width="583" alt="image" src='https://i.postimg.cc/J4dJNRyh/localhost-3001-11.png'>
+<img width="583" alt="image" src='https://i.postimg.cc/pr4tYsgy/localhost-3002-4.png'>
+<img width="583" alt="image" src='https://i.postimg.cc/7LtDZPmg/localhost-3002-5.png'>
 
     - Dribble Design Inspiration 
 <img widt='583' alt='image' src='https://i.postimg.cc/Wb9K0q6J/palette-picker-dribble.png'>
