@@ -1,5 +1,5 @@
 import * as actions from "./index";
-import { mockProject, mockPalettes } from "../thunks/mockData";
+import { mockProject, mockPalettes } from "../utils/mockData";
 
 describe("actions", () => {
   it("should return a type of HAS_ERROR with an error", () => {

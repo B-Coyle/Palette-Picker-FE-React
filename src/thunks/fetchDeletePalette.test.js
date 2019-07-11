@@ -1,19 +1,17 @@
-import { fetchPalettes } from "./fetchPalettes";
-import {savePalette, isLoading, hasError} from "../actions/index";
-import { mockPalettes } from '../utils/mockData';
+import { hasError, deletePalette, isLoading, deleteProject } from "../actions";
+import { fetchDeletePalette } from "./fetchDeletePalette";
 
-
-describe("fetchPalettes Thunk", () => {
+describe("fetchDeletePalettes Thunk", () => {
   let mockDispatch;
-  let mockUrl 
+  let mockUrl;
 
   beforeEach(() => {
     mockDispatch = jest.fn();
-    mockUrl = 'www.testing.com'
+    mockUrl = "www.testing.com";
   });
 
   it("should call dispatch with isLoading(true) action", () => {
-    const thunk = fetchPalettes(mockUrl, savePalette, "GET");
+    const thunk = fetchDeletePalette(mockUrl, deletePalette, "DELETE");
     thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
   });
@@ -25,26 +23,24 @@ describe("fetchPalettes Thunk", () => {
         statusText: "Error has occurred"
       })
     );
-    const thunk = fetchPalettes(mockUrl, savePalette, "GET");
+    const thunk = fetchDeletePalette(mockUrl, deletePalette, "DELETE");
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(hasError("Error has occurred"));
   });
 
-  it.skip("should dispatch savePalette", async () => {
-    let mockPalettes = { palette_name: "Cool Spring Water" };
+  it("should dispatch deletePalette", async () => {
+
+    let mockPalettes = [{id:21, palette_name: "Cool Spring Water" }, {id: 27, palette_name: 'Fresh Mountain Air'}]
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
         json: () => Promise.resolve(mockPalettes),
         ok: true
       })
     );
-
-    const thunk = fetchPalettes(mockUrl, savePalette, "GET");
+    const thunk = fetchDeletePalette(mockUrl, deletePalette, "DELETE");
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(savePalette(mockPalettes));
+    expect(mockDispatch).toHaveBeenCalledWith(deletePalette(mockPalettes));
   });
-
-
 });

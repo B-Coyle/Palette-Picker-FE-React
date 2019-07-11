@@ -14,3 +14,5 @@ describe('errorReducer' , () => {
         expect(result).toEqual(expected)
     })
 })
+
+//removed error.error from error reducer -double check to make sure it didn't affect other areas

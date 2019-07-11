@@ -1,6 +1,6 @@
 import { palettesReducer } from "./palettesReducer";
 import * as actions from '../actions/index';
-import { mockPalettes } from '../thunks/mockData';
+import { mockPalettes } from '../utils/mockData';
 
 describe('paletteReducer' , () => {
 
