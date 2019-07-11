@@ -151,7 +151,7 @@ class PaletteGenerator extends Component {
             onClick={this.generateColors}
           />
         </section>
-        <Form colors={this.state.colors}/>
+        <Form colors={this.state.colors} />
       </div>
     );
   }

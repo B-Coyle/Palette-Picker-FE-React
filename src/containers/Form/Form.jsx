@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchNewProject } from '../../thunks/fetchNewProject';
+import { fetchNewPalette } from '../../thunks/fetchNewPalette';
 
 class Form extends Component {
   constructor(props) {
@@ -18,6 +19,21 @@ class Form extends Component {
 
   createProject = () => {
     this.props.fetchNewProject(this.state.projectName);
+    this.setState({ projectName: "" });
+  }
+
+  createPalette = () => {
+    const colors = this.props.colors.map((color, i) => ({
+      [`color${i+1}`]: color
+    }));
+    const palData = {
+      palette_name: this.state.paletteName,
+      project_id: this.state.selectedProject
+    };
+    const palette = Object.assign({}, palData, ...colors );
+    
+    this.props.fetchNewPalette(palette);
+    this.setState({paletteName: ''});
   }
 
   
@@ -37,6 +53,7 @@ class Form extends Component {
               id="projectName"
               type="text"
               placeholder="New Project Name"
+              value={this.state.projectName}
               onChange={e => this.handleChange(e)}
             />
             <input
@@ -64,6 +81,7 @@ class Form extends Component {
               type="text"
               placeholder="Palette Name"
               id="paletteName"
+              value={this.state.paletteName}
               onChange={e => this.handleChange(e)}
             />
             <input
@@ -71,6 +89,7 @@ class Form extends Component {
               type="button"
               id="create-palette-btn"
               value="Create Palette"
+              onClick={this.createPalette}
             />
           </form>
         </section>
@@ -84,7 +103,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  fetchNewProject: (name) => dispatch(fetchNewProject(name))
+  fetchNewProject: (name) => dispatch(fetchNewProject(name)),
+  fetchNewPalette: (palette) => dispatch(fetchNewPalette(palette))
 });
 
 export default connect(
