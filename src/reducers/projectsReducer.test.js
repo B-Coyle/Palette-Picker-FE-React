@@ -31,5 +31,15 @@ describe('projectsReducer', () => {
         const result = projectsReducer(initialState, actions.addProject(newPalette));
         expect(result).toEqual(expected);
     });
+
+    it('should delete an exisiting project', () => {
+        const initialState = [{id:1}, {id: 2}];
+        const projectToDelete = 1;
+        const expected = [{id:2}];
+        const result = projectsReducer(initialState, actions.deleteProject(projectToDelete));
+        expect(result).toEqual(expected);
+        
+    });
+
 })
 
