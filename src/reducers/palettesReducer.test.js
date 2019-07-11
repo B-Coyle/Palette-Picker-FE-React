@@ -21,7 +21,7 @@ describe('paletteReducer' , () => {
         const addedPalette = { color1: 'pink'}
         const expected = [{ color1: 'white'}, { color1: 'pink'}]
 
-        const result = palettesReducer(initialState, actions.addPalette(addedPalette))
+        const result = palettesReducer(initialState, actions.savePalette(addedPalette))
         expect(result).toEqual(expected)
     });
 

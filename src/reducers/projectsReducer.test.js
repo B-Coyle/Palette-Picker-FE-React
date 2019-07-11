@@ -15,7 +15,7 @@ describe('projectsReducer', () => {
         const action = actions.saveProjects(mockProjects);
         const result = projectsReducer(mockState, action)
         expect(result).toEqual(mockProjects)
-    })
+    });
 
     it('should return all of the projects', () => {
         const initialState = []
