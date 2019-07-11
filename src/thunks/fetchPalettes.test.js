@@ -1,15 +1,22 @@
 import { fetchPalettes } from "./fetchPalettes";
-import * as actions from "../actions";
+import {savePalette, isLoading} from "../actions/index";
 import { mockPalettes } from './mockData';
 
 
-describe("addNewNote Thunk", () => {
-  let mockUrl 
+describe("fetchPalettes Thunk", () => {
   let mockDispatch;
-  let mockPalettes;
+  let mockUrl 
 
   beforeEach(() => {
     mockDispatch = jest.fn();
-    mockUrl = 'www.anybodyoutthere.com'
+    mockUrl = 'www.testing.com'
   });
+
+  it("should call dispatch with isLoading(true) action", () => {
+    const thunk = fetchPalettes(mockUrl, savePalette, "GET");
+    thunk(mockDispatch);
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+  });
+
+
 });
