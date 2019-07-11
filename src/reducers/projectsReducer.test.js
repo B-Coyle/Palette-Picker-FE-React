@@ -1,6 +1,6 @@
 import { projectsReducer } from "./projectsReducer";
 import * as actions from '../actions/index';
-import { mockProjects } from '../thunks/mockData';
+import { mockProjects } from '../utils/mockData';
 
 describe('projectsReducer', () => {
     let mockState = []

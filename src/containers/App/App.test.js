@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { App, mapDispatchToProps } from './App';
 import { fetchProjects } from '../../thunks/fetchProjects';
 import { fetchPalettes } from '../../thunks/fetchPalettes';
-import { mockProjects } from '../../thunks/mockData';
+import { mockProjects } from '../../utils/mockData';
 import * as actions from '../../actions';
 import { isMainThread } from 'worker_threads';
 

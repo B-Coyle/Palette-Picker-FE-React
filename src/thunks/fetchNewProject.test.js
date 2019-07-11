@@ -31,8 +31,10 @@ describe("fetchNewProjects Thunk", () => {
   });
 
   it.skip("should dispatch addProject", async () => {
-
-    let mockProject = [{ palette_name: "Cool Spring Water" }, {palette_name: 'Fresh Mountain Air'}]
+    let mockProject = [
+      { palette_name: "Cool Spring Water" },
+      { palette_name: "Fresh Mountain Air" }
+    ];
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
         json: () => Promise.resolve(mockProject),
@@ -41,7 +43,6 @@ describe("fetchNewProjects Thunk", () => {
     );
     const thunk = fetchNewProject(mockUrl, addProject, "POST");
     await thunk(mockDispatch);
-
     expect(mockDispatch).toHaveBeenCalledWith(addProject(mockProject));
   });
 });

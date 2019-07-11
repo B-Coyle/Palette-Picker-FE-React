@@ -1,4 +1,4 @@
-import { hasError, deletePalette, isLoading } from "../actions";
+import { hasError, deletePalette, isLoading, deleteProject } from "../actions";
 import { fetchDeletePalette } from "./fetchDeletePalette";
 
 describe("fetchDeletePalettes Thunk", () => {
@@ -29,9 +29,9 @@ describe("fetchDeletePalettes Thunk", () => {
     expect(mockDispatch).toHaveBeenCalledWith(hasError("Error has occurred"));
   });
 
-  it.skip("should dispatch deletePalette", async () => {
+  it("should dispatch deletePalette", async () => {
 
-    let mockPalettes = [{ palette_name: "Cool Spring Water" }, {palette_name: 'Fresh Mountain Air'}]
+    let mockPalettes = [{id:21, palette_name: "Cool Spring Water" }, {id: 27, palette_name: 'Fresh Mountain Air'}]
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
         json: () => Promise.resolve(mockPalettes),
