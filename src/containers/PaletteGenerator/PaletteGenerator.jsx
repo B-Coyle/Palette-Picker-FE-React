@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import randomHexColor from "random-hex-color";
 import Form from "../Form/Form";
 
-class PaletteGenerator extends Component {
+export class PaletteGenerator extends Component {
   constructor(props) {
     super(props);
     this.state = {
