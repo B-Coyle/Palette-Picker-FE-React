@@ -3,6 +3,9 @@ import * as actions from '../actions/index';
 import { mockPalettes } from '../thunks/mockData';
 
 describe('paletteReducer' , () => {
+
+    let mockState = [];
+
     it('should return the initial state', () => {
         const expected = []
         const result = palettesReducer(undefined, {})
@@ -14,6 +17,12 @@ describe('paletteReducer' , () => {
         const expected = mockPalettes;
         const result = palettesReducer(initialState, actions.addPalette(expected))[0]
         expect(result).toEqual(expected)
+    });
+
+    it('should save a new project', () => {
+        const action = actions.savePalette(mockPalettes);
+        const result = palettesReducer(mockState, action)
+        expect(result).toEqual(mockPalettes)
     });
 
     it('should add a new palette', () => {

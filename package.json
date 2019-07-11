@@ -47,6 +47,7 @@
       "src/**/*.{js,jsx}",
       "!src/thunks/mockData",
       "!src/index.js",
+      "!src/reducers/index.js",
       "!src/setupTests.js"
     ]
   }

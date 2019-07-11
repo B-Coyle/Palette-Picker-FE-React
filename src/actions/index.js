@@ -27,3 +27,13 @@ export const isLoading = boolean => ({
   type: "IS_LOADING",
   isLoading: boolean
 });
+
+export const deleteProject = (id) => ({
+  type:"DELETE_PROJECT",
+  id
+})
+
+export const deletePalette = (id)=> ({
+  type:"DELETE_PALETTE",
+  id
+})
