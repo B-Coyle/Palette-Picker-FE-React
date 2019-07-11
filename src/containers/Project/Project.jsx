@@ -20,7 +20,7 @@ export function Project(props) {
         <button
           onClick={() => props.fetchDeleteProject(props.project.id)}
         >
-          <i class="fas fa-trash-alt" />
+          <i class="fas fa-trash-alt trash-btn fa-2x" />
         </button>
       </div>
       <div className="project-palettes">{palettes}</div>

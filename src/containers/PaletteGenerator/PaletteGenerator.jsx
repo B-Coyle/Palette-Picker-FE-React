@@ -146,7 +146,7 @@ class PaletteGenerator extends Component {
         <section class="generate-palette">
           <input
             type="button"
-            class="generate-palette-btn"
+            class="generate-palette-btn button"
             value="Regenerate Colors"
             onClick={this.generateColors}
           />
