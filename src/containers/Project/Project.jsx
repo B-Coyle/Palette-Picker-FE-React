@@ -1,6 +1,7 @@
 import React from "react";
 import Palette from "../Palette/Palette";
 import { connect } from "react-redux";
+import { fetchDeleteProject } from "../../thunks/fetchDeleteProject";
 
 export function Project(props) {
   
@@ -16,7 +17,11 @@ export function Project(props) {
         <div>
           <h3 className="project-title">{props.project.project_name}</h3>
         </div>
-        <i class="fas fa-trash-alt" />
+        <button
+          onClick={() => props.fetchDeleteProject(props.project.id)}
+        >
+          <i class="fas fa-trash-alt" />
+        </button>
       </div>
       <div className="project-palettes">{palettes}</div>
     </section>
@@ -27,4 +32,8 @@ export const mapStateToProps = state => ({
   palettes: state.palettes
 });
 
-export default connect(mapStateToProps)(Project);
+export const mapDispatchToProps = dispatch => ({
+  fetchDeleteProject: id => dispatch(fetchDeleteProject(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Project);

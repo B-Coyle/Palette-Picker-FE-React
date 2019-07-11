@@ -16,7 +16,7 @@ export const fetchNewProject = (name) => {
       if (!response.ok) {
         throw Error(response.statusText);
       }
-      const id = await response.json();
+      const { id } = await response.json();
       dispatch(addProject({ project_name: name, id}));
       dispatch(isLoading(false));
     } catch (error) {

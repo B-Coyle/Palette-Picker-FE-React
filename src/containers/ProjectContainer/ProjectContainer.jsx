@@ -6,7 +6,7 @@ const ProjectContainer = props => {
   return (
     <section class="saved-projects-section">
       {props.projects.length &&
-        props.projects.map(project => (
+        props.projects.reverse().map(project => (
           <Project key={project.id} project={project} />
         ))}
     </section>
