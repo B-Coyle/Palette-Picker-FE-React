@@ -62,4 +62,8 @@ describe("actions", () => {
     const result = actions.isLoading(isLoading);
     expect(result).toEqual(expected);
   });
+
+  it.skip('should return a type of DELETE_PROJECT with an id', () => {
+
+  });
 });

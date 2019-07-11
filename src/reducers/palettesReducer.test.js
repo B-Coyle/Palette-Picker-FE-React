@@ -34,4 +34,13 @@ describe('paletteReducer' , () => {
         expect(result).toEqual(expected)
     });
 
+    it('should delete an exisiting project', () => {
+        const initialState = [{id:1}, {id: 2}];
+        const paletteToDelete = 1;
+        const expected = [{id:2}];
+        const result = palettesReducer(initialState, actions.deletePalette(paletteToDelete));
+        expect(result).toEqual(expected);
+        
+    });
+
 })
