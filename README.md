@@ -74,7 +74,7 @@ Created by:
                 [LinkedIn](https://www.linkedin.com/in/bridgett-coyle-6640bb54/)
 
 - Jacob Bogart: [GitHub](https://github.com/jacobogart),
-                [Email](mailto:jacobogart jacobogart@gmail.com),
+                [Email](mailto:jacobogart@gmail.com),
                 [LinkedIn](https://www.linkedin.com/in/jacobogart/)
 
 
