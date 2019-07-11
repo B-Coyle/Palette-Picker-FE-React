@@ -6,7 +6,7 @@ function Palette(props) {
   const palette = props.data;
   return (
     <div className="palette-holder" id={`palette${palette.id}`}>
-      <h3>{palette.palette_name}</h3>
+      <h5>{palette.palette_name}</h5>
       <div className="saved-palettes">
         <div
           id="color1"
@@ -36,7 +36,7 @@ function Palette(props) {
         <button
           id={palette.id}
           data-project={palette.project_id}
-          className="trash-btn"
+          className="trash-btn button"
           onClick={() => props.fetchDeletePalette(palette.id)}
         >
           <i id={palette.id} className="fas trash-btn fa-trash-alt fa-2x" />

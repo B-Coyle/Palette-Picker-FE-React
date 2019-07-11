@@ -1,17 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 $primary-background: #1e2023;
 $primary-font-color: #ececed;
 
@@ -21,21 +7,16 @@ body {
   color: #ececed;
 }
 
-header {
-  width: 100%;
-  height: 200px;
+h1 {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-img {
-  height: 150px;
   width: 100%;
+  padding: 5px;
+  border-bottom: 3px solid #343640;
 }
 
 .palette-container {
-  margin: 20px;
+  margin: auto;
   height: 200px;
   width: 90%;
   display: grid;
@@ -43,6 +24,13 @@ img {
   border-radius: 5px;
   border: 2px solid white;
   box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.6);
+}
+
+.name-project-form {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .color-container {
@@ -128,39 +116,54 @@ input {
 }
 
 .button {
-  width: 200px;
-  height: 34px;
+  width: 150px;
+  height: 35px;
   margin: 0;
   background-size: 100%;
+  background-color: #e5e5d8;
   background-repeat: no-repeat;
   box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.6);
 }
-//originally removed class-may need to add these back in
 
 .button:hover {
   box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.8);
 }
-//originally removed class button-may need to add back in
 
 button {
   width: 150px;
   height: 35px;
-  margin: 0;
+  margin: 10px 5px;
   border-radius: 3px;
+  background-color: #e5e5d8;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.6);
 }
 
 .saved-projects-section {
-  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding-bottom: 50px;
+  border-top: 3px solid #343640;
 }
 
 .saved-projects {
   margin: 20px;
   border-bottom: 3px solid #343640;
   padding: 10px;
+}
+
+.Project {
+  justify-content: center;
+  width: 40%;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid #343640; 
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.project-header {
+  display: flex;
 }
 
 .color1 {
