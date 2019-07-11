@@ -46,10 +46,4 @@ describe("addNewNote Thunk", () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.addPalette(mockPalettes[0]));
   });
 
-  it.skip("should return error when post fails", async () => {
-    jest.mock("../utils/apiFetches/postNewNote", () => Promise.reject("Failed to Post"));
-    // postNewNote.mockImplementation(() => Promise.reject("Failed to Post"));
-    const result = await fetchPalettes(mockPalettes[0])(mockDispatch)
-    expect(result).toEqual("Failed to Post")
-  })
 });
