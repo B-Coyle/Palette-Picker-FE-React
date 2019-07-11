@@ -63,7 +63,26 @@ describe("actions", () => {
     expect(result).toEqual(expected);
   });
 
-  it.skip('should return a type of DELETE_PROJECT with an id', () => {
+  it('should return a type of DELETE_PROJECT with an id', () => {
+    const id = 1
+    const expected = {
+      type: 'DELETE_PROJECT',
+      id
+    }
+    const result = actions.deleteProject(id)
 
+    expect(result).toEqual(expected);
   });
+
+  it('should return a type of DELETE_PALETTE with an id', () => {
+    const id = 1
+    const expected = {
+      type: 'DELETE_PALETTE',
+      id
+    }
+    const result = actions.deletePalette(id)
+
+    expect(result).toEqual(expected);
+  });
+
 });
