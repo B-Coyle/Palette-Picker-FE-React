@@ -1,7 +1,7 @@
-import { hasError, deletePalette, isLoading } from "../actions";
-import { fetchDeletePalette } from "./fetchDeletePalette";
+import { hasError, deleteProject, isLoading } from "../actions";
+import { fetchDeleteProject } from "./fetchDeleteProject";
 
-describe("fetchDeletePalettes Thunk", () => {
+describe("fetchDeleteProject Thunk", () => {
   let mockDispatch;
   let mockUrl;
 
@@ -11,7 +11,7 @@ describe("fetchDeletePalettes Thunk", () => {
   });
 
   it("should call dispatch with isLoading(true) action", () => {
-    const thunk = fetchDeletePalette(mockUrl, deletePalette, "DELETE");
+    const thunk = fetchDeleteProject(mockUrl, deleteProject, "DELETE");
     thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
   });
@@ -23,24 +23,24 @@ describe("fetchDeletePalettes Thunk", () => {
         statusText: "Error has occurred"
       })
     );
-    const thunk = fetchDeletePalette(mockUrl, deletePalette, "DELETE");
+    const thunk = fetchDeleteProject(mockUrl, deleteProject, "DELETE");
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(hasError("Error has occurred"));
   });
 
-  it.skip("should dispatch deletePalette", async () => {
+  it.skip("should dispatch deleteProject", async () => {
 
-    let mockPalettes = [{ palette_name: "Cool Spring Water" }, {palette_name: 'Fresh Mountain Air'}]
+    let mockProjects = [{ palette_name: "Cool Spring Water" }, {palette_name: 'Fresh Mountain Air'}]
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
-        json: () => Promise.resolve(mockPalettes),
+        json: () => Promise.resolve(mockProjects),
         ok: true
       })
     );
-    const thunk = fetchDeletePalette(mockUrl, deletePalette, "DELETE");
+    const thunk = fetchDeleteProject(mockUrl, deleteProject, "DELETE");
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(deletePalette(mockPalettes));
+    expect(mockDispatch).toHaveBeenCalledWith(deleteProject(mockProjects));
   });
 });
