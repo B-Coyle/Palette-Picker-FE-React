@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Project from "../Project/Project";
 
-const ProjectContainer = props => {
+export const ProjectContainer = props => {
   const projectComponents = props.projects.length ?
         props.projects.reverse().map(project => (
           <Project key={project.id} project={project} />

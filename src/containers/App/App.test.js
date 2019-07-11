@@ -18,7 +18,12 @@ describe('app', () => {
   let fetchPalettesMock = jest.fn()
 
   beforeEach(() => {
-    wrapper = shallow(<App />)
+    wrapper = shallow(
+      <App
+        fetchPalettes={fetchPalettesMock}
+        fetchProjects={fetchProjectsMock}
+      />
+    );
   });
 
   it('should render the component elements', () => {
@@ -32,6 +37,14 @@ describe('app', () => {
       const mappedProperties = mapDispatchToProps(mockDispatch)
       mappedProperties.fetchProjects();
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-    })
-  })
-})
+    });
+
+    it("should call dispatch when fetchPalettes is called", () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = fetchPalettes();
+      const mappedProperties = mapDispatchToProps(mockDispatch);
+      mappedProperties.fetchPalettes();
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+  });
+});

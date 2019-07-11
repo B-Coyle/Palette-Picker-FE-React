@@ -6,7 +6,7 @@ import { fetchProjects } from "../../thunks/fetchProjects.js";
 import ProjectContainer from "../ProjectContainer/ProjectContainer.jsx";
 import PaletteGenerator from "../PaletteGenerator/PaletteGenerator.jsx";
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {

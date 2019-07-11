@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchDeletePalette } from "../../thunks/fetchDeletePalette";
 
-function Palette(props) {
+export function Palette(props) {
   const palette = props.data;
   return (
     <div className="palette-holder" id={`palette${palette.id}`}>
@@ -39,7 +39,7 @@ function Palette(props) {
           className="trash-btn button"
           onClick={() => props.fetchDeletePalette(palette.id)}
         >
-          <i id={palette.id} className="fas trash-btn fa-trash-alt fa-2x" />
+          <i id={palette.id} className="fas fa-trash-alt fa-2x" />
         </button>
       </div>
     </div>
